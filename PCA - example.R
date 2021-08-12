@@ -19,7 +19,7 @@
 #' 
 
 #getStandardPCA <- function(assetReturns, portfolioReturns, portfolioWeights, periods, lookbackWindow){
-assetReturns <- read.csv("~/Misc/Inputs/PCA_example.csv")
+assetReturns <- read.csv("./PCA_example.csv")
 periods <- 12
 portfolioReturns <- matrix(NA, nrow = 1, ncol = 0)
 
@@ -99,6 +99,6 @@ portfolioReturns <- matrix(NA, nrow = 1, ncol = 0)
     PCAOutput$FundBreakdown = list(PCAAssetVolDecomp = PCAAssetVolDecomp)
   }
   
-  madcatBacktest::write.xlsx.superComplexList(PCAOutput, "~/Misc/Outputs/pca_sample.xlsx")
+  madcatBacktest::write.xlsx.superComplexList(PCAOutput, "./pca_sample.xlsx")
 #   return(PCAOutput)
 # }

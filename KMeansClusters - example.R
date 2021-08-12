@@ -16,7 +16,7 @@
  
 #getKMeansClusters = function(returns) {
 
-returns <- read.csv("~/Misc/Inputs/Kmeans_example.csv")
+returns <- read.csv("./Kmeans_example.csv")
   clusterAssignments <- c()
   for(i in 2:ncol(returns)-1) {
     cluster <- kmeans(t(returns), i, nstart = 20) #we want dates as vars, funds as obs, so we transpose
@@ -25,7 +25,7 @@ returns <- read.csv("~/Misc/Inputs/Kmeans_example.csv")
   KmeansTmp = rbind(clusterAssignments, 1:ncol(returns))
   KmeansOut <- apply(KmeansTmp, 2, rev) #add a last column with everybody in own cluster
   
-  write.csv(KmeansOut, "~/Misc/Outputs/Kmeans_sample.csv")
+  write.csv(KmeansOut, "./Kmeans_sample.csv")
   
 #  return(KmeansOut)
 #}
